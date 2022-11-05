@@ -1,0 +1,292 @@
+﻿Atividade MAPA 
+
+Acadêmico (a): 
+
+FABRICIO DA SILVA LUCAS 
+
+R.A 
+
+1743960-5 
+
+Curso: 
+
+Engenharia de 
+software 
+
+Disciplina: Algoritmos E Lógica De Programação l 
+
+
+
+Algoritmo "MAPA - ENG SOFT - ALGORITMOS E LÓGICA DE 
+PROGRAMAÇÃO I - 2018B1" 
+
+// Disciplina : [Algoritmos E Lógica De Programação I] 
+
+// Professor : Prof. Esp. Fábio Ataide de Lima 
+
+// Descrição : Estatistica Entrevistados 
+
+// Autor(a) : Fabricio Da Silva Lucas 
+
+// Data atual : 26/06/2018 
+
+ 
+
+Var 
+
+// Seção de Declarações das variáveis 
+
+ Nomes: vetor[1..20] de caractere 
+
+ continuaCadastrar: caracter 
+
+ Idade:vetor [1..20] de inteiro 
+
+ Quantidadedefilhos: vetor[1..20] de inteiro 
+
+ Rendamensalfamiliar: vetor [1..20] de real 
+
+ opcao, i, n1, S, TotalMulheres, TotalHomens,Rendamensal_500, Nasc2000, 
+MaisD1Filho: inteiro 
+
+ Sexo:vetor [1..20] de caracter 
+
+ N: caracter 
+
+ Nome1:caracter 
+
+
+ 
+
+Inicio // Seção de Comandos, procedimento, funções, operadores, etc... 
+
+ Enquanto (opcao <> 3) faca 
+
+ Escreval ("") 
+
+ Escreval (" ALGORITMOS E LÓGICA DE PROGRAMAÇÃO I") 
+
+ Escreval ("") 
+
+ Escreval (" U N I C E S U S M A R") 
+
+ Escreval ("") 
+
+ Escreval (" F A B R I C I O D A S I L V A L U C A S ") 
+
+ Escreval ("") 
+
+ Escreval ("+----------------------------------------------------------+") 
+
+ Escreval ("|- 1 – Cadastrar Entrevistado |") 
+
+ Escreval ("|- 2 – Percentual de mulheres e homens |") 
+
+ Escreval ("| Número de pessoas com renda familiar de 500.00 |") 
+
+ Escreval ("| Percentual de pessoas que tem ao menos 1 filho |") 
+
+ Escreval ("| Número de pessoas que nasceram a partir do ano 2000 
+|") 
+
+ Escreval ("|- 3 – Sair |") 
+
+ Escreval ("+----------------------------------------------------------+") 
+
+ Escreval ("|- - Digite a opção: |") 
+
+ Escreval ("+----------------------------------------------------------+") 
+
+ Escreval ("") 
+
+ leia (opcao) 
+
+ Se (opcao = 1) entao 
+
+
+ Caso 1 
+
+ i:=0 
+
+ limpatela 
+
+ continuaCadastrar <- "S" 
+
+ Enquanto continuaCadastrar = "S" faca 
+
+ Escreval ("Opção escolhida: 1 - Cadastrar Entrevistado") 
+
+ limpatela 
+
+ Escreval ("*******************************") 
+
+ Escreval ("***CADASTRO DE ENTREVISTADO****") 
+
+ Escreval ("*******************************") 
+
+ i:=i+1 
+
+ Escreval (i+0,"°* E N T R E V I S T A D O *") 
+
+ Escreval ("--------------------------------") 
+
+ Escreva ("Nome:") 
+
+ Leia (Nomes[i]) 
+
+ Escreval ("--------------------------------") 
+
+ Escreva ("Idade:") 
+
+ Leia (Idade[i]) 
+
+ Escreval ("--------------------------------") 
+
+ Escreva ("Sexo:") 
+
+ Leia (Sexo[i]) 
+
+ Escreval ("--------------------------------") 
+
+ Escreva ("Quantidade De Filhos:") 
+
+ Leia (Quantidadedefilhos[i]) 
+
+
+ Escreval ("--------------------------------") 
+
+ Escreva ("Renda Mensal Familiar:") 
+
+ Leia (Rendamensalfamiliar[i]) 
+
+ Escreval ("-------------------------------") 
+
+ Escreval("Deseja continuar cadastrando? (S/N)") 
+
+ leia(continuaCadastrar) 
+
+ limpatela 
+
+ Fimenquanto 
+
+ Fimse 
+
+ Se (opcao = 2) entao 
+
+ caso 2 
+
+ Enquanto nao(NOMES[i]="") faca 
+
+ Se (Sexo[i]="F") entao 
+
+ TotalMulheres:=TotalMulheres+1 
+
+ Fimse 
+
+ 
+
+ Se (Sexo[i]="M") entao 
+
+ TotalHomens:=TotalHomens+1 
+
+ Fimse 
+
+ 
+
+ Se (Idade[i]<18) entao 
+
+ Nasc2000:=Nasc2000+1 
+
+ Fimse 
+
+ 
+
+
+ Se (Rendamensalfamiliar[i]>=500) entao 
+
+ Rendamensal_500:=Rendamensal_500+1 
+
+ Fimse 
+
+ 
+
+ Se (Quantidadedefilhos[i]>0) entao 
+
+ MaisD1Filho:=MaisD1Filho+1 
+
+ Fimse 
+
+ i:=i+1 
+
+ 
+
+ 
+
+ Limpatela 
+
+ Escreval ("") 
+
+ Escreval ("+------------------------------------------+") 
+
+ Escreval ("| |") 
+
+ Escreval ("| * * E S T A T I S T I C A S * * |") 
+
+ Escreval ("| |") 
+
+ Escreval ("+------------------------------------------+") 
+
+ Escreval ("| Total De Entrevistados:________",i) 
+
+ Escreval ("|") 
+
+ Escreval ("| - Mulheres:__",TotalMulheres/i*100) 
+
+ Escreval ("| - Homens:______",TotalHomens/i*100) 
+
+ Escreval ("| - Mais De R$500,00:__",Rendamensal_500) 
+
+ Escreval ("| - Mais De Um Filho____",MaisD1Filho) 
+
+ Escreval ("| - Apartir De 2000_____",Nasc2000) 
+
+
+ Escreval ("+------------------------------------------+") 
+
+ fimse 
+
+ Se (opcao = 3) entao 
+
+ caso 3 
+
+ Escreval("Opção escolhida: 3 - Sair") 
+
+ fimse 
+
+ Se (opcao >= 7) entao 
+
+ outrocaso 
+
+ escreval ("Opção inválida!!") 
+
+ fimse 
+
+ FimEnquanto 
+
+fimalgoritmo 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+

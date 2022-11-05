@@ -1,0 +1,296 @@
+﻿ 
+
+ 
+Atividade MAPA 
+
+Acadêmico (a): 
+
+FABRICIO DA SILVA LUCAS 
+
+R.A 
+
+ 1743960-5 
+
+Curso: 
+
+Engenharia de 
+software 
+
+Disciplina: Algoritmos E Lógica De Programação l 
+
+
+
+#include <stdio.h> 
+
+#include <stdlib.h> 
+
+#include <locale.h> 
+
+#include <string.h> 
+
+#include <string> 
+
+#include <conio.h> 
+
+#include <iostream> 
+
+#include <math.h> 
+
+ 
+
+#define MAX 20 
+
+ 
+
+// Criação da estrutura contato 
+
+struct aluno { 
+
+ char nome[60]; 
+
+ char Email[45]; 
+
+ int Peso; 
+
+ float Altura; 
+
+ int cont; 
+
+ float IMC; 
+
+ std::string condicao; 
+
+}; 
+
+ 
+
+// Declaração da variável agenda 
+
+struct aluno Cadastro[MAX]; 
+
+ 
+
+int main() { 
+
+ int opcao, i, numero; 
+
+ setlocale(LC_ALL, "Portuguese"); 
+
+ 
+
+ do { 
+
+ printf("------------------------------------------------------------------------------------------
+------------------------------"); 
+
+ printf("\t\t PROGRAMA PARA ACADÊMIA \n \n \t 
+\t\t\tUNICESUMAR\n\n\t\tDesenvolvido por: Fabrício Da Silva Lucas 
+"); 
+
+ printf("\n\n-------------------------------------------------------------------------------------
+-----------------------------------\n"); 
+
+ 
+
+ printf(" +-------------------------------------------------------------------------------------
++\n"); 
+
+ printf(" | IMC = M A S S A 
+|\n"); 
+
+ printf(" | A l t u r a X A l t u r a |\n"); 
+
+
+ printf(" +-------------------------------------------------------------------------------------
++\n\n"); 
+
+ 
+
+ printf(" Cadastro Aluno:\n"); 
+
+ printf("1 - Adicionar Aluno\n"); 
+
+ printf("2 - Listar Aluno\n"); 
+
+ printf("3 - Excluir Aluno\n"); 
+
+ printf("4 - Listar IMC\n"); 
+
+ printf("0 - Sair\n"); 
+
+ scanf("%d", &opcao); 
+
+ 
+
+ switch (opcao) { 
+
+ case 1: 
+
+ printf("Escolha a posicao a adicionar: "); 
+
+ scanf("%d", &i); 
+
+ printf("Digite o nome: "); 
+
+ scanf("%s", &Cadastro[i].nome); 
+
+ printf("Digite o Email: "); 
+
+ scanf("%s", &Cadastro[i].Email); 
+
+ printf("Digite o Peso: "); 
+
+ scanf("%d", &Cadastro[i].Peso); 
+
+ printf("Digite a Altura: "); 
+
+ scanf("%f", &Cadastro[i].Altura); 
+
+ break; 
+
+ 
+
+ case 2: 
+
+ printf("\tNome\t\t\t\t\tEmail\t\t\t\tPeso\t\tAltura\t\t\n"); 
+
+ for (i = 0; i < MAX; i++) { 
+
+ if (Cadastro[i].nome == "") 
+
+ continue; 
+
+ printf("%d: %s - \t\t\t\t\t\t%s - \t\t\t\t%d - \t\t%.2f\n", i, Cadastro[i].nome, 
+Cadastro[i].Email, Cadastro[i].Peso, Cadastro[i].Altura); 
+
+ } 
+
+ break; 
+
+ 
+
+ case 3: 
+
+ printf("--------------------"); 
+
+ printf("\n C. Excluir Aluno: \n"); 
+
+ printf("--------------------"); 
+
+ printf("\n\nDigite o Numero a ser excluido: "); 
+
+ scanf("%d", &i); 
+
+ 
+
+ memset(&Cadastro[i], 0, sizeof(Cadastro[i])); 
+
+ printf("*****Aluno Excluido!*****\n\n"); 
+
+ break; 
+
+ case 4: 
+
+ for( i = 0; i < MAX; i++ ){ 
+
+ Cadastro[i].IMC = (Cadastro[i].Peso/ 
+(Cadastro[i].Altura*Cadastro[i].Altura)); 
+
+ if (Cadastro[i].IMC < 18.5){ 
+
+ Cadastro[i].condicao = "BAIXO PESO"; 
+
+ 
+
+
+ }if((Cadastro[i].IMC) >= 18.5 && (Cadastro[i].IMC < 
+25)){ 
+
+ Cadastro[i].condicao = "BAIXO IDEAL"; 
+
+ } 
+
+ if((Cadastro[i].IMC) >= 25 && (Cadastro[i].IMC <= 
+30)){ 
+
+ Cadastro[i].condicao = "SOBRE PESO"; 
+
+ } 
+
+ 
+
+ if((Cadastro[i].IMC) > 30 && (Cadastro[i].IMC <= 
+35)){ 
+
+ Cadastro[i].condicao = "OBESIDADE GRAU 
+1"; 
+
+ } 
+
+ 
+
+ if((Cadastro[i].IMC) > 35 && (Cadastro[i].IMC <= 
+40)){ 
+
+ Cadastro[i].condicao = "OBESIDADE GRAU 
+2"; 
+
+ } 
+
+ 
+
+ if(Cadastro[i].IMC > 40){ 
+
+ Cadastro[i].condicao = "OBESIDADE GRAU 
+3"; 
+
+ } 
+
+ printf("%d: %s - %.2f - %s\n", i, Cadastro[i].nome, Cadastro[i].IMC, 
+Cadastro[i].condicao.c_str()); 
+
+ 
+
+ } 
+
+ 
+
+ break; 
+
+ case 0: 
+
+ exit(0); 
+
+ default: 
+
+ printf("Opcao invalida!\n"); 
+
+ break; 
+
+ } 
+
+ 
+
+ } while (1 == 1); 
+
+ 
+
+ return 0; 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
